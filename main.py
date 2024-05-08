@@ -33,8 +33,8 @@ with psycopg.connect("dbname=idiom_v1 user=db_user port=5440 host=localhost pass
             index = index + 1
             uuid = secure_random_alphanumeric(16)
             cur.execute(
-                "INSERT INTO idioms_tbl (id, idiom_eng, idiom_hin, is_read) VALUES (%s, %s, %s, %s)",
-                (uuid, row[1], row[2], "false"))
+                "INSERT INTO idioms_tbl (id, idiom_eng, idiom_hin) VALUES (%s, %s, %s)",
+                (uuid, row[1], row[2]))
             print("inserted row with uuid: ", uuid, " having row no.: ", index, " with csv id: ", row[0])
 
 
